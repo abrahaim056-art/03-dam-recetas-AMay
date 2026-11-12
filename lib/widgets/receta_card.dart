@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dam03_recetas_amay/models/receta.dart';
+import 'package:dam03_recetas_amay/widgets/dialogo_resena.dart';
 
 class RecetaCard extends StatelessWidget {
   final Receta receta;
@@ -59,6 +60,12 @@ class RecetaCard extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.rate_review),
+                tooltip: 'Escribir reseña',
+                onPressed: () =>
+                    mostrarDialogoResena(context, receta.nombre.hashCode),
               ),
             ],
           ),
